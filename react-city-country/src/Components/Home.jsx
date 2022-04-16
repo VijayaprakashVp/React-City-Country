@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 
 export const Home = () => {
   const [data, setData] = useState([]);
+  const [sortdata, setSortdata] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:8080/Country`)
       .then((res) => res.json())
       .then((res) => setData(res))
+      .then((res) => setSortdata(res))
       .catch((res) => console.log(err));
   }, []);
-  console.log("data", data);
+
+  //   console.log("data", data);
 
   return (
     <div>
-      <button>Sort by Population</button>
+      <button onClick={handleSort}>Sort by Population</button>
       <br />
       <br />
       <br />
@@ -49,11 +52,3 @@ export const Home = () => {
     </div>
   );
 };
-
-{
-  /* <div key={e.id}>
-          <p>Country Name : {e.country_name}</p>
-          <p>City Name : {e.city_name}</p>
-          <p>Population : {e.population}</p>
-        </div> */
-}

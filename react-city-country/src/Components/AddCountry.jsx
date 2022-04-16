@@ -11,7 +11,7 @@ export const AddCountry = () => {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    alert("Successfully Added");
+    alert("Country Added Successfully");
     const details = {
       country_name: country,
       city_name: city,
