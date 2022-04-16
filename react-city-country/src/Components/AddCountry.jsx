@@ -27,6 +27,8 @@ export const AddCountry = () => {
 
   return (
     <div>
+      <h1>Please provide the required Details</h1>
+      Country :{" "}
       <input
         type="text"
         placeholder="Country Name"
@@ -37,6 +39,7 @@ export const AddCountry = () => {
       />
       <br />
       <br />
+      City :{" "}
       <input
         type="text"
         placeholder="City Name"
@@ -47,6 +50,7 @@ export const AddCountry = () => {
       />
       <br />
       <br />
+      Population :{" "}
       <input
         type="text"
         placeholder="Total Population"

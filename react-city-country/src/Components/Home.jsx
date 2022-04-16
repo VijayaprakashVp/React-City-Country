@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 
 export const Home = () => {
   const [data, setData] = useState([]);
-  const [sortdata, setSortdata] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:8080/Country`)
       .then((res) => res.json())
       .then((res) => setData(res))
-      .then((res) => setSortdata(res))
       .catch((res) => console.log(err));
   }, []);
 
@@ -42,9 +40,9 @@ export const Home = () => {
               </td>
               <td>
                 <button
-                //   onClick={(e) => {
-                //     data.filter((e) => setData())
-                //   }}
+                  onClick={(e) => {
+                    data.filter((e) => setData());
+                  }}
                 >
                   Delete
                 </button>

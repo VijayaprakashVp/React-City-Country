@@ -23,6 +23,18 @@
       "city_name": "Tirupur",
       "population": "1000000",
       "id": 4
+    },
+    {
+      "country_name": "India",
+      "city_name": "Madurai",
+      "population": "123456789",
+      "id": 5
+    },
+    {
+      "country_name": "India",
+      "city_name": "Erode",
+      "population": "50000",
+      "id": 6
     }
   ]
 }
