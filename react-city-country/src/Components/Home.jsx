@@ -16,7 +16,7 @@ export const Home = () => {
 
   return (
     <div>
-      <button onClick={handleSort}>Sort by Population</button>
+      <button>Sort by Population</button>
       <br />
       <br />
       <br />
