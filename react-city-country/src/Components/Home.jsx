@@ -13,6 +13,11 @@ export const Home = () => {
 
   return (
     <div>
+      <button>Sort by Population</button>
+      <br />
+      <br />
+      <br />
+
       <table style={{ border: "1.5px solid black" }}>
         <thead>
           <tr>
