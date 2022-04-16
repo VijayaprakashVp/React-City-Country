@@ -19,8 +19,6 @@ export const Home = () => {
       <button>Sort by Population</button>
       <br />
       <br />
-      <br />
-
       <table style={{ border: "1.5px solid black" }}>
         <thead>
           <tr>
@@ -28,14 +26,14 @@ export const Home = () => {
             <th style={{ border: "1px solid gray" }}>Country</th>
             <th style={{ border: "1px solid gray" }}>City</th>
             <th style={{ border: "1px solid gray" }}>Population</th>
-            <th style={{ border: "1px solid gray" }}>Status</th>
-            <th style={{ border: "1px solid gray" }}>Status</th>
+            <th style={{ border: "1px solid gray" }}>Update</th>
+            <th style={{ border: "1px solid gray" }}>Update</th>
           </tr>
         </thead>
         <tbody>
           {data.map((e) => (
             <tr key={e.id}>
-              <td style={{ border: "1px solid gray" }}>{e.id}</td>
+              <td style={{ border: "1px solid gray" }}>{e.id}.</td>
               <td style={{ border: "1px solid gray" }}>{e.country_name}</td>
               <td style={{ border: "1px solid gray" }}>{e.city_name}</td>
               <td style={{ border: "1px solid gray" }}>{e.population}</td>
@@ -43,7 +41,13 @@ export const Home = () => {
                 <button>Edit</button>
               </td>
               <td>
-                <button>Delete</button>
+                <button
+                //   onClick={(e) => {
+                //     data.filter((e) => setData())
+                //   }}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
