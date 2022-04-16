@@ -1,20 +1,32 @@
 // City name, Population and Country
 
-export const ADD_CITY = "ADD_CITY";
-export const ADD_COUNTRY = "ADD_COUNTRY";
-export const ADD_POPULATION = "ADD_POPULATION";
+export const COUNTRY_LOADING = "COUNTRY_LOADING";
+export const COUNTRY_SUCCESS = "COUNTRY_SUCCESS";
+export const COUNTRY_FAILED = "COUNTRY_FAILED";
 
-export const addCity = (payload) => ({
-  type: ADD_CITY,
+export const CountryLoading = (payload) => ({
+  type: COUNTRY_LOADING,
+});
+
+export const CountrySuccess = (payload) => ({
+  type: COUNTRY_SUCCESS,
   payload,
 });
 
-export const addCountry = (payload) => ({
-  type: ADD_COUNTRY,
-  payload,
+export const CountryFailed = (payload) => ({
+  type: COUNTRY_FAILED,
 });
 
-export const addPopulation = (payload) => ({
-  type: ADD_POPULATION,
-  payload,
-});
+export const UpdateDetails = (details) => (dispatch) => {
+  dispatch(CountryLoading);
+  fetch(`http://localhost:8080/Country`, {
+    method: "POST",
+    body: JSON.stringify(details),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => dispatch(CountrySuccess(res)))
+    .catch((err) => dispatch(CountryFailed(err)));
+};
