@@ -22,7 +22,16 @@ export const Home = () => {
     setSortdata(temp);
     // console.log(data);
   };
-  console.log("sortdata:", sortdata);
+
+  //   console.log("sortdata:", sortdata);
+
+  const handleDelete = (id) => {
+    // console.log("id:", id);
+    let temp = data.filter((e) => e.id !== id);
+    setData(temp);
+    setSortdata(temp);
+    console.log("temp:", temp);
+  };
 
   return (
     <div>
@@ -51,13 +60,7 @@ export const Home = () => {
                 <button>Edit</button>
               </td>
               <td>
-                <button
-                  onClick={(e) => {
-                    data.filter((e) => setData());
-                  }}
-                >
-                  Delete
-                </button>
+                <button onClick={() => handleDelete(e.id)}>Delete</button>
               </td>
             </tr>
           ))}
