@@ -30,7 +30,7 @@ export const Home = () => {
     let temp = data.filter((e) => e.id !== id);
     setData(temp);
     setSortdata(temp);
-    console.log("temp:", temp);
+    // console.log("temp:", temp);
   };
 
   return (
