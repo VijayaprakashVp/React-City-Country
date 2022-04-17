@@ -16,8 +16,8 @@ export const countryReducer = (store = initState, { type, payload }) => {
       return {
         ...store,
         loading: false,
-        country: payload.country,
-        city: payload.city,
+        country: payload.country_name,
+        city: payload.city_name,
         population: payload.population,
         error: false,
       };

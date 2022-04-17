@@ -2,19 +2,31 @@ import React, { useEffect, useState } from "react";
 
 export const Home = () => {
   const [data, setData] = useState([]);
+  const [sortdata, setSortdata] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:8080/Country`)
       .then((res) => res.json())
-      .then((res) => setData(res))
-      .catch((res) => console.log(err));
+      .then((res) => {
+        setData(res);
+        setSortdata(res);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   //   console.log("data", data);
 
+  const handleSort = () => {
+    let temp = [...data];
+    temp.sort((a, b) => a.population - b.population);
+    setSortdata(temp);
+    // console.log(data);
+  };
+  console.log("sortdata:", sortdata);
+
   return (
     <div>
-      <button>Sort by Population</button>
+      <button onClick={handleSort}>Sort by Population</button>
       <br />
       <br />
       <table style={{ border: "1.5px solid black" }}>
@@ -29,9 +41,9 @@ export const Home = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((e) => (
+          {sortdata.map((e, i) => (
             <tr key={e.id}>
-              <td style={{ border: "1px solid gray" }}>{e.id}.</td>
+              <td style={{ border: "1px solid gray" }}>{i + 1}.</td>
               <td style={{ border: "1px solid gray" }}>{e.country_name}</td>
               <td style={{ border: "1px solid gray" }}>{e.city_name}</td>
               <td style={{ border: "1px solid gray" }}>{e.population}</td>

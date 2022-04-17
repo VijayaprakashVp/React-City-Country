@@ -35,6 +35,18 @@
       "city_name": "Erode",
       "population": "50000",
       "id": 6
+    },
+    {
+      "country_name": "USA",
+      "city_name": "Chicago",
+      "population": "11111111",
+      "id": 7
+    },
+    {
+      "country_name": "USA",
+      "city_name": "india",
+      "population": "100000",
+      "id": 8
     }
   ]
 }
